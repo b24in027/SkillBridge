@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkillBridge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <button onClick="toggleDarkMode()">🌙</button>
+    <div class="logo">
+        <h2>SkillBridge</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="login">
+
+    <h2>Welcome Back!</h2>
+
+    <p>Login to continue your learning journey.</p>
+
+    <form onsubmit="return validateLogin()">
+
+        <label>Email</label><br>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+        <label>Password</label><br>
+        <input type="password" id="password" placeholder="Enter your password"><br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <br>
+
+    <p>
+        Don't have an account?
+        <a href="register.html">Register Here</a>
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 SkillBridge | Learn Together. Grow Together.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
