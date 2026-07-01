@@ -30,7 +30,7 @@
     <!-- Search Box -->
     <input type="text" id="skillSearch"
            placeholder="Search Skills..."
-           onkeyup="searchSkills()">
+           onkeyup="searchSkills()"><br><br>
 
     <!-- Skill Card 1 -->
     <div class="skill-card">
@@ -68,7 +68,7 @@
         <p>Critical Thinking</p>
     </div>
     
-    <div>
+    <div class="skill-card">
         <h3>Technical Skills</h3>
         <ul>
             <li>Full Stack Development</li>
@@ -77,11 +77,12 @@
             <li>Data Structures & Algorithms</li>
             <li>Database Management</li>
         </ul>
-        <button>Learn More</button>
+        <button onClick="learnMore(this)">Learn More</button>
+        
     </div>
 
 
-    <div>
+    <div class="skill-card">
         <h3>English & Communication</h3>
         <ul>
             <li>English Speaking</li>
@@ -90,7 +91,7 @@
             <li>Presentation Skills</li>
             <li>Interview Communication</li>
         </ul>
-        <button>Learn More</button>
+        <button onClick="learnMore(this)">Learn More</button>
     </div>
 
 
@@ -103,7 +104,8 @@
             <li>Resume Building</li>
             <li>Interview Preparation</li>
         </ul>
-        <button>Learn More</button>
+        <button onClick="learnMore(this)">Learn More</button>
+        
     </div>
 
 
@@ -115,7 +117,8 @@
             <li>Time Management</li>
             <li>Critical Thinking</li>
         </ul>
-        <button>Learn More</button>
+        <button onClick="learnMore(this)">Learn More</button>
+        
     </div>
 
 
@@ -127,5 +130,37 @@
 </footer>
 
 <script src="script.js"></script>
+    <script>
+
+function searchSkills(){
+
+let input=document.getElementById("searchSkill").value.toLowerCase();
+
+let cards=document.getElementsByClassName("skill-card");
+
+for(let i=0;i<cards.length;i++){
+
+let text=cards[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+cards[i].style.display="block";
+}
+else{
+cards[i].style.display="none";
+}
+
+}
+
+}
+
+function learnMore(button){
+
+let title=button.parentElement.querySelector("h3").innerText;
+
+alert(title + "\n\nExplore this category to improve your skills through peer learning.");
+
+}
+
+</script>
 </body>
 </html>
