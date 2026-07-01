@@ -8,7 +8,9 @@
 <body>
 
 <header>
-    <button onClick="toggleDarkMode()">🌙</button>
+
+    <button onclick="toggleDarkMode()">🌙</button>
+
     <h1>SkillBridge</h1>
 
     <nav>
@@ -25,65 +27,256 @@
 
 <section>
 
-    <h2>My Profile</h2>
+<h2>My Profile</h2>
 
 
-    <div>
-        <h3>Personal Information</h3>
+<div class="profile-card">
 
-        <p>Name: User Name</p>
-        <p>Email: user@gmail.com</p>
-        <p>Role: Student</p>
-        <p>Location: India</p>
+<h3>Personal Information</h3>
 
-        <button>Edit Profile</button>
-    </div>
+<p>Name: <span id="name">User Name</span></p>
+<p>Email: <span id="email">user@gmail.com</span></p>
+<p>Role: <span id="role">Student</span></p>
+<p>Location: <span id="location">India</span></p>
 
 
+<button onclick="editProfile()">Edit Profile</button>
 
-    <div>
-        <h3>About Me</h3>
-        <p>
-            I am a student interested in improving technical,
-            communication and career skills through SkillBridge.
-        </p>
-    </div>
+</div>
 
 
 
-    <div>
-        <h3>My Skills</h3>
 
-        <ul>
-            <li>Java Programming</li>
-            <li>English Communication</li>
-            <li>Aptitude</li>
-            <li>Web Development</li>
-        </ul>
+<div class="profile-card">
 
-        <button>Add New Skill</button>
-    </div>
+<h3>About Me</h3>
+
+<p id="bio">
+I am a student interested in improving technical,
+communication and career skills through SkillBridge.
+</p>
 
 
+<button onclick="editBio()">Edit Bio</button>
 
-    <div>
-        <h3>Achievements</h3>
 
-        <ul>
-            <li>Completed Java Course</li>
-            <li>Improved Communication Skills</li>
-            <li>Participated in Skill Challenges</li>
-        </ul>
-    </div>
+</div>
+
+
+
+
+
+<div class="profile-card">
+
+<h3>My Skills</h3>
+
+
+<ul id="skillsList">
+
+<li>Java Programming</li>
+<li>English Communication</li>
+<li>Aptitude</li>
+<li>Web Development</li>
+
+</ul>
+
+
+<input type="text" id="skillInput" placeholder="Enter new skill">
+
+<button onclick="addSkill()">Add New Skill</button>
+
+
+</div>
+
+
+
+
+
+<div class="profile-card">
+
+
+<h3>Achievements</h3>
+
+
+<ul id="achievementList">
+
+<li>Completed Java Course</li>
+<li>Improved Communication Skills</li>
+<li>Participated in Skill Challenges</li>
+
+</ul>
+
+
+<input type="text" id="achievementInput" placeholder="Enter achievement">
+
+<button onclick="addAchievement()">Add Achievement</button>
+
+
+</div>
+
 
 
 </section>
 
 
+
+
+
 <footer>
-    <p>© 2026 SkillBridge. All rights reserved.</p>
+
+<div class="footer-content">
+
+<h3>SkillBridge</h3>
+
+<p>
+A platform where students share skills,
+learn from peers, and grow together.
+</p>
+
+
+<div class="footer-links">
+
+<a href="dashboard.html">Home</a>
+<a href="profile.html">Profile</a>
+<a href="skills.html">Skills</a>
+<a href="mentors.html">Mentors</a>
+
+</div>
+
+
+<p>
+© 2026 SkillBridge. All rights reserved.
+</p>
+
+
+</div>
+
 </footer>
 
+
+
+
+
 <script src="script.js"></script>
+
+
+<script>
+
+
+function editProfile(){
+
+let name = prompt("Enter your name:");
+
+let location = prompt("Enter your location:");
+
+
+
+if(name){
+
+document.getElementById("name").innerHTML=name;
+
+}
+
+
+if(location){
+
+document.getElementById("location").innerHTML=location;
+
+}
+
+
+}
+
+
+
+
+function editBio(){
+
+
+let bio = prompt("Write about yourself:");
+
+
+
+if(bio){
+
+document.getElementById("bio").innerHTML=bio;
+
+}
+
+
+}
+
+
+
+
+
+function addSkill(){
+
+
+let skill = document.getElementById("skillInput").value;
+
+
+
+if(skill.trim() !== ""){
+
+
+let li=document.createElement("li");
+
+
+li.innerHTML=skill;
+
+
+document.getElementById("skillsList").appendChild(li);
+
+
+
+document.getElementById("skillInput").value="";
+
+
+}
+
+
+}
+
+
+
+
+
+function addAchievement(){
+
+
+
+let achievement=document.getElementById("achievementInput").value;
+
+
+
+if(achievement.trim() !== ""){
+
+
+let li=document.createElement("li");
+
+
+li.innerHTML=achievement;
+
+
+
+document.getElementById("achievementList").appendChild(li);
+
+
+
+document.getElementById("achievementInput").value="";
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
 </body>
+
 </html>
